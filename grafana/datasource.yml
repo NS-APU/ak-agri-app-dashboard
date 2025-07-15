@@ -1,0 +1,19 @@
+apiVersion: 1
+
+datasources:
+  - name: fiware-quantumleap
+    type: yesoreyeram-infinity-datasource
+    url: http://quantumleap:8668
+    isDefault: true
+    jsonData:
+      allowedHosts:
+        - 'http://quantumleap'
+    editable: true
+
+  - name: fiware-orion
+    type: yesoreyeram-infinity-datasource
+    url: http://orion:1026
+    jsonData:
+      allowedHosts:
+        - 'http://orion'
+    editable: true

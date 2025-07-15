@@ -1,0 +1,39 @@
+#
+#
+services:
+  grafana:
+    labels:
+      org.fiware: ${COMPOSE_LABEL_FIWARE}
+    image: grafana/grafana-enterprise:${GRAFANA_VERSION}
+    container_name: grafana
+    restart: unless-stopped
+    networks:
+      - default
+    ports:
+      - "${GRAFANA_PORT}:${GRAFANA_PORT}"
+    environment:
+      - GF_PLUGINS_PREINSTALL=yesoreyeram-infinity-datasource@${GRAFANA_PLUGIN_INFINITY_VERSION}
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/dashboards/FloodMonitoring.json
+      - GF_SECURITY_ALLOW_EMBEDDING=true
+      - GF_SECURITY_COOKIE_SAMESITE=none
+      - GF_SECURITY_COOKIE_SECURE=true
+      - GF_PANELS_DISABLE_SANITIZE_HTML=true
+      - GF_LOG_LEVEL=debug
+    volumes:
+      - grafana:/var/lib/grafana
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - ./grafana/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml
+      - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |
+        /run.sh
+
+networks:
+  default:
+    external: true
+    name: 'fiware_default'
+
+volumes:
+  grafana: ~
