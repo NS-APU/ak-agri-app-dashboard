@@ -1,5 +1,5 @@
 # ak-agri-app-dashbord
-このリポジトリは、[秋田版農業情報基盤](https://github.com/NS-APU/ak-agri-platform)を利用するアプリケーションのソースコードおよび関連ドキュメントをまとめたものです。
+このリポジトリは、[秋田版農業情報基盤](https://github.com/NS-APU/ak-agri-platform)を参照する[Grafana](https://grafana.com/ja/)ダッシュボードアプリをまとめたものです。
 
 # 起動
 ## 前提条件
