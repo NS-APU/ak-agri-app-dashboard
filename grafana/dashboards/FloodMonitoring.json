@@ -185,6 +185,10 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "marcusolsson-static-datasource",
+        "uid": "P1D2C73DC01F2359B"
+      },
       "fieldConfig": {
         "defaults": {},
         "overrides": []
@@ -195,21 +199,30 @@
         "x": 0,
         "y": 7
       },
-      "id": 3,
+      "id": 7,
       "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
-        },
-        "content": "<iframe\n  src=\"https://gbank.gsj.jp/seamless//shinsui/shinsui.html?center=39.338325%2C140.073017&z=15&base=CHIRIIN_STD&terrain=composite&opacity=0.7&level=${current_water_level}&levelMax=100&seamlessType=original&overlayOp=0.7&marker=\"\n  style=\"width: 100%; height: 650px; scale(0.8);\" allowfullscreen>\n</iframe>",
-        "mode": "html"
+        "disableInteractivity": false,
+        "scaleFactor": 1,
+        "src": "https://gbank.gsj.jp/seamless//shinsui/shinsui.html?center=39.342125%2C140.073017&z=15&base=CHIRIIN_STD&terrain=composite&opacity=0.7&level=${current_water_level}&levelMax=100&seamlessType=original&overlayOp=0.7&marker="
       },
-      "pluginVersion": "12.0.2",
+      "pluginVersion": "1.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "marcusolsson-static-datasource",
+            "uid": "P1D2C73DC01F2359B"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "浸水シミュレーション",
-      "type": "text"
+      "type": "nmcclain-iframe-panel"
     },
     {
+      "datasource": {
+        "type": "marcusolsson-static-datasource",
+        "uid": "P1D2C73DC01F2359B"
+      },
       "fieldConfig": {
         "defaults": {},
         "overrides": []
@@ -220,19 +233,95 @@
         "x": 14,
         "y": 7
       },
-      "id": 4,
+      "id": 6,
       "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
+        "alt_field": "",
+        "autofit": false,
+        "baseUrl": "https://cam.river.go.jp/cam/now/",
+        "height": "75",
+        "icon_field": "fileName",
+        "open_url": {
+          "base_url": "",
+          "enable": false,
+          "metric_field": "",
+          "open_in_tab": true,
+          "suffix": ""
         },
-        "content": "<table style=\"width:100%; height:100%;border:0px solid black;\">\r\n  <td style=\"text-align: center;vertical-align: middle;border:0px solid black; \">\r\n    <img src=\"https://cam.river.go.jp/cam/now/cctv_050008_21C04405.jpg?level=${current_water_level}\" style=\"zoom: 1.2;\"/>\r\n  </td>\r\n</table>",
-        "mode": "html"
+        "overlay": {
+          "bindings": {
+            "bindings": [],
+            "has_text": true,
+            "unbounded": "#66666620"
+          },
+          "field": "",
+          "height": {
+            "size": 5,
+            "unit": "%"
+          },
+          "position": "Top right",
+          "width": {
+            "size": 5,
+            "unit": "%"
+          }
+        },
+        "shared_cross_hair": {
+          "backgroundColor": "#FFFFFF10",
+          "borderColor": "#FFFFFF20"
+        },
+        "singleFill": true,
+        "slideshow": {
+          "duration": 5000,
+          "enable": false,
+          "infinite": true,
+          "pauseOnHover": true,
+          "transition": "Slide",
+          "transition_duration": 1000
+        },
+        "suffix": "?level=${current_water_level}",
+        "tooltip": false,
+        "tooltip_date_elapsed": false,
+        "tooltip_field": "",
+        "tooltip_include_date": false,
+        "tooltip_include_field": true,
+        "underline": {
+          "bindings": {
+            "bindings": [],
+            "has_text": true,
+            "unbounded": "#CCCCDCFF"
+          },
+          "bindings_field": "",
+          "field": "",
+          "text_align": "left",
+          "text_size": "14"
+        },
+        "width": "75"
       },
-      "pluginVersion": "12.0.2",
+      "pluginVersion": "4.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "marcusolsson-static-datasource",
+            "uid": "P1D2C73DC01F2359B"
+          },
+          "frame": {
+            "fields": [
+              {
+                "config": {},
+                "name": "fileName",
+                "type": "string",
+                "values": [
+                  "cctv_050008_21C04405.jpg"
+                ]
+              }
+            ],
+            "meta": {},
+            "name": "Ishizawa-01"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "河川カメラ",
-      "type": "text"
+      "type": "dalvany-image-panel"
     }
   ],
   "preload": false,
@@ -243,8 +332,8 @@
     "list": [
       {
         "current": {
-          "text": "1.05",
-          "value": "1.05"
+          "text": "1.03",
+          "value": "1.03"
         },
         "datasource": {
           "type": "yesoreyeram-infinity-datasource",
@@ -316,6 +405,6 @@
   },
   "timezone": "browser",
   "title": "FloodMonitoring",
-  "uid": "1db51eba-8d95-4459-a86b-3d855ac7cc44",
+  "uid": "20101f0c-a664-49f3-9b95-a985e12ebd74",
   "version": 3
 }
