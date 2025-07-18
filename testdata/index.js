@@ -114,7 +114,7 @@ async function sendLevelToFiware(level) {
             type: FIWARE_ENTITY_TYPE,
             ...payload // payload に @context が含まれないようにする
         }];
-        console.log(JSON.stringify(createPayload, null, 2));
+        // console.log(JSON.stringify(createPayload, null, 2));
         const upsertUrl = `${FIWARE_ORION_URL}/entityOperations/upsert`;
         await axios.post(upsertUrl, createPayload, { headers });
         console.log(`[${new Date().toLocaleTimeString()}] Water level ${level.toFixed(2)}m (${currentState} state) sent to FIWARE.`);
