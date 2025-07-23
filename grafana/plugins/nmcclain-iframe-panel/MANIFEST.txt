@@ -1,0 +1,38 @@
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+{
+  "manifestVersion": "2.0.0",
+  "signatureType": "private",
+  "signedByOrg": "nmcclain",
+  "signedByOrgName": "nmcclain",
+  "rootUrls": [
+    "http://localhost:3000/",
+    "https://grafana.dev/"
+  ],
+  "plugin": "nmcclain-iframe-panel",
+  "version": "1.0.1",
+  "time": 1723307763135,
+  "keyId": "7e4d0c6a708866e7",
+  "files": {
+    "plugin.json": "76afcd71ff70df91d944af903e83e2011d41081d0d959d21a8d28c11ba114a3d",
+    "module.js": "417e5b926cbb15c43283c0f59f6e6a1f4cc86f5e1da6d1c92e7c5dd6de0ae48f",
+    "LICENSE": "c5accbbd8546e94c34aed24afe689a617627d18eed5a6c48277e48db57c23851",
+    "README.md": "d804bc4a3b02a464d4761fb0fcd05e2ae50a5e86e1761547dd6acf90b0a2c36c",
+    "CHANGELOG.md": "aaa78be4710ef41d56ddab1edbd180ef9f9adfea2f293109aae925dc33a1b9b3",
+    "module.js.map": "1cd282e926f108aa8a288676fd2582ed886c7f2f36a292069ea9208cd10cd376",
+    "img/logo.svg": "1defc6f7e585c67657bcfd8fddc599ee7dfa82f8674413f49fa274c2cd453ec6"
+  }
+}
+-----BEGIN PGP SIGNATURE-----
+Version: OpenPGP.js v4.10.11
+Comment: https://openpgpjs.org
+
+wrkEARMKAAYFAma3lvMAIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
+cIhm55uMAgkB9nHPkcznm4wG7anxNvW5SfVk8toJx1akflwMhGFQYo5+Ksto
+Qs+slGasl0Mi4/YMCJhJdYNSrUkvMVE8ENiPlrUCCQCp3WaY2TzKzAM1kA22
+NE4wGWO7CHkks+uGsFFOwTo4taG+P9tyexHGONIqUTHWGuwcgVMqzPhKtLRX
+GR9fpYECtQ==
+=X7lb
+-----END PGP SIGNATURE-----

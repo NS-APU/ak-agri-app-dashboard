@@ -12,12 +12,13 @@ services:
     ports:
       - "${GRAFANA_PORT}:${GRAFANA_PORT}"
     environment:
-      - GF_PLUGINS_PREINSTALL=yesoreyeram-infinity-datasource@${GRAFANA_PLUGIN_INFINITY_VERSION}
+      - GF_PLUGINS_PREINSTALL=yesoreyeram-infinity-datasource@${GRAFANA_PLUGIN_INFINITY_VERSION},marcusolsson-static-datasource@${GRAFANA_PLUGIN_BUSINESS_INPUT},dalvany-image-panel@${GRAFANA_PLUGIN_DYNAMIC_IMAGE_PANEL}
       - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/dashboards/FloodMonitoring.json
-      - GF_PANELS_DISABLE_SANITIZE_HTML=true
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=nmcclain-iframe-panel
       - GF_LOG_LEVEL=debug
     volumes:
       - grafana:/var/lib/grafana
+      - ./grafana/plugins/nmcclain-iframe-panel:/var/lib/grafana/plugins/nmcclain-iframe-panel
       - ./grafana/dashboards:/var/lib/grafana/dashboards
       - ./grafana/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml
       - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml

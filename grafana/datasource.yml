@@ -17,3 +17,13 @@ datasources:
       allowedHosts:
         - 'http://orion'
     editable: true
+
+  - name: Static
+    type: marcusolsson-static-datasource
+    access: proxy
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      codeEditorEnabled: true
+    
