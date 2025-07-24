@@ -42,16 +42,16 @@ let levelChangePerStep = 0; // 移行中のステップごとの水位変化量
 
 // --- 引数 ---
 const optionDefinitions = [
-  {
-    name: 'verbose',
-    alias: 'v',
-    type: Boolean
-  }
+    {
+        name: 'verbose',
+        alias: 'v',
+        type: Boolean
+    }
 ];
 const options = commandLineArgs(optionDefinitions);
 
 // デバッグログ出力用(引数に-vを付けた時だけ出力する)
-const debugLog = (options.verbose)? console.log.bind(console) : ()=>{};
+const debugLog = (options.verbose) ? console.log.bind(console) : () => { };
 
 
 // --- ヘルパー関数 ---
