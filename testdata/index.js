@@ -2,6 +2,7 @@ const dotenv = require('dotenv');
 const dotenvExpand = require('dotenv-expand');
 dotenvExpand.expand(dotenv.config());
 const axios = require('axios');
+const commandLineArgs = require('command-line-args');
 
 // --- 設定値 ---
 const FIWARE_ORION_URL = process.env.FIWARE_ORION_URL; // /ngsi-ld/v1 エンドポイント
@@ -38,6 +39,20 @@ let lastStateTransitionTime = Date.now(); // 最後に状態が移行したタ�
 
 let transitionStepCounter = 0; // 移行中のステップカウンター
 let levelChangePerStep = 0; // 移行中のステップごとの水位変化量
+
+// --- 引数 ---
+const optionDefinitions = [
+  {
+    name: 'verbose',
+    alias: 'v',
+    type: Boolean
+  }
+];
+const options = commandLineArgs(optionDefinitions);
+
+// デバッグログ出力用(引数に-vを付けた時だけ出力する)
+const debugLog = (options.verbose)? console.log.bind(console) : ()=>{};
+
 
 // --- ヘルパー関数 ---
 
@@ -114,10 +129,10 @@ async function sendLevelToFiware(level) {
             type: FIWARE_ENTITY_TYPE,
             ...payload // payload に @context が含まれないようにする
         }];
-        // console.log(JSON.stringify(createPayload, null, 2));
+        // debugLog(JSON.stringify(createPayload, null, 2));
         const upsertUrl = `${FIWARE_ORION_URL}/entityOperations/upsert`;
         await axios.post(upsertUrl, createPayload, { headers });
-        console.log(`[${new Date().toLocaleTimeString()}] Water level ${level.toFixed(2)}m (${currentState} state) sent to FIWARE.`);
+        debugLog(`[${new Date().toLocaleTimeString()}] Water level ${level.toFixed(2)}m (${currentState} state) sent to FIWARE.`);
     } catch (error) {
         console.error(`[${new Date().toLocaleTimeString()}] Error sending data to FIWARE:`, error.response ? error.response.data : error.message);
     }

@@ -6,7 +6,6 @@ services:
       org.fiware: ${COMPOSE_LABEL_FIWARE}
     image: grafana/grafana-enterprise:${GRAFANA_VERSION}
     container_name: grafana
-    restart: unless-stopped
     networks:
       - default
     ports:
