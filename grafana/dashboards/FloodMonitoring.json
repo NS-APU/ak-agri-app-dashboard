@@ -176,6 +176,14 @@
               {
                 "key": "attrs",
                 "value": "currentLevel,observationDateTime"
+              },
+              {
+                "key": "fromDate",
+                "value": "${__from:date:iso}"
+              },
+              {
+                "key": "toDate",
+                "value": "${__to:date:iso}"
               }
             ]
           }
