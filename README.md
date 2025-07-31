@@ -22,4 +22,4 @@ services スクリプトを実行することによって、アプリケーシ�
 
 # データの可視化
 [Grafana](https://grafana.com/ja/)を使って情報基盤のデータを確認できます。Webブラウザで[http://localhost:3000](http://localhost:3000)にアクセスしてください。  
-(ユーザ名：admin、初期パスワード：admin)
+(ユーザ名：admin、パスワード：ak-agri)
