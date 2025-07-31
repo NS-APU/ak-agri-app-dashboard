@@ -11,6 +11,7 @@ services:
     ports:
       - "${GRAFANA_PORT}:${GRAFANA_PORT}"
     environment:
+      - GF_SECURITY_ADMIN_PASSWORD=ak-agri
       - GF_PLUGINS_PREINSTALL=yesoreyeram-infinity-datasource@${GRAFANA_PLUGIN_INFINITY_VERSION},marcusolsson-static-datasource@${GRAFANA_PLUGIN_BUSINESS_INPUT},dalvany-image-panel@${GRAFANA_PLUGIN_DYNAMIC_IMAGE_PANEL}
       - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/dashboards/FloodMonitoring.json
       - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=nmcclain-iframe-panel
