@@ -181,7 +181,10 @@ function sendSubscriptionToFiware() {
             format: 'normalized',
             endpoint: {
                 uri: `${FIWARE_QUANTUM_LEAP_URL}/notify`,
-                accept: 'application/json'
+                accept: 'application/json',
+                receiverInfo: [
+                    { 'key': 'Fiware-TimeIndex-Attribute', 'value': 'observationDateTime' }
+                ]
             }
         },
         '@context': `${FIWARE_CONTEXT}`
