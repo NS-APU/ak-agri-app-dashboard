@@ -1,0 +1,13 @@
+apiVersion: 1
+
+providers:
+  - name: 'AIC GIS'
+    orgId: 1
+    folder: ''
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 21600
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/AicGisData.json
+      foldersFromFilesStructure: false
