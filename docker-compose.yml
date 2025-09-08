@@ -21,6 +21,7 @@ services:
       - ./grafana/plugins/nmcclain-iframe-panel:/var/lib/grafana/plugins/nmcclain-iframe-panel
       - ./grafana/dashboards:/var/lib/grafana/dashboards
       - ./grafana/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml
+      - ./grafana/dashboard-gis.yml:/etc/grafana/provisioning/dashboards/dashboard-gis.yml
       - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
     entrypoint:
       - /bin/bash
