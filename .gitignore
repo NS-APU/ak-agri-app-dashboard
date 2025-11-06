@@ -1,3 +1,5 @@
 #
 certs/
 docker-compose-dev.yml
+grafana/dashboard-gis-dev.yml
+grafana/dashboards/AicGisData-dev.json
