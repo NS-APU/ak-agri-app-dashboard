@@ -15,7 +15,7 @@
 ### 1. 依存関係のインストール
 ```bash
 cd raspberry
-npm install
+npm ci
 ```
 
 ### 2. 環境変数の設定
